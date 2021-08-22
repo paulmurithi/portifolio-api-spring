@@ -3,12 +3,14 @@ package com.murithipaul.portfolio.service;
 import com.murithipaul.portfolio.entity.Project;
 import com.murithipaul.portfolio.repository.ProjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.UUID;
 
+@Service
 public class ProjectServiceImpl implements ProjectService{
     @Autowired
     private ProjectRepository projectRepository;
