@@ -12,4 +12,8 @@ public interface ProjectService {
     public Optional<Project> getProjectById(UUID id);
 
     public Project addProject(Project project);
+
+    public Project updateProject(UUID id, Project project);
+
+    public void deleteProject(UUID id);
 }

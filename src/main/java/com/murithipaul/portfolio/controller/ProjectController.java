@@ -20,7 +20,7 @@ public class ProjectController {
         return projectService.getProjects();
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public Optional<Project> getProjectById(@PathVariable("id") UUID id){
         return projectService.getProjectById(id);
     }
@@ -28,5 +28,16 @@ public class ProjectController {
     @PostMapping
     public Project addProject(Project project){
         return projectService.addProject(project);
+    }
+
+    @PutMapping("/{id}")
+    public Project updateProject(@PathVariable("id") UUID id, @RequestBody Project project){
+        return projectService.updateProject(id, project);
+    }
+
+    @DeleteMapping("/{id}")
+    public String deleteProject(@PathVariable("id") UUID id){
+        projectService.deleteProject(id);
+        return "Project deleted successfully";
     }
 }
