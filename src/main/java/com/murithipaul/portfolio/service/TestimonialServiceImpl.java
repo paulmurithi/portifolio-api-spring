@@ -32,6 +32,9 @@ public class TestimonialServiceImpl implements TestimonialService{
     @Override
     public Testimonial editTestimonial(long id, @NonNull Testimonial testimonial) {
         Testimonial testimonialDB = testimonialRepository.findById(id).get();
+        testimonialDB.setName(testimonial.getName());
+        testimonialDB.setCompany(testimonial.getCompany());
+        testimonialDB.setMessage(testimonial.getMessage());
         return testimonialRepository.save(testimonialDB);
     }
 
