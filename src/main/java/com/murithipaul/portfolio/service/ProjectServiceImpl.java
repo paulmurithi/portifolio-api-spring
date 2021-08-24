@@ -39,6 +39,7 @@ public class ProjectServiceImpl implements ProjectService{
         Project projectDB = projectRepository.getById(id);
         if(Objects.nonNull(project) && !"".equalsIgnoreCase(project.getName())){
             projectDB.setName(project.getName());
+            projectDB.setLink(project.getLink());
         }
         return projectRepository.save(projectDB);
     }
