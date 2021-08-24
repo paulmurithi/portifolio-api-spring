@@ -36,7 +36,7 @@ public class ProjectServiceImpl implements ProjectService{
 
     @Override
     public Project updateProject(UUID id, Project project) {
-        Project projectDB = projectRepository.findById(id).get();
+        Project projectDB = projectRepository.getById(id);
         if(Objects.nonNull(project) && !"".equalsIgnoreCase(project.getName())){
             projectDB.setName(project.getName());
         }

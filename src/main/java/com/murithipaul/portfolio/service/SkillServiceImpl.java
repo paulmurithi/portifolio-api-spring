@@ -42,7 +42,7 @@ public class SkillServiceImpl implements SkillService {
 
     @Override
     public Skill updateSkill(UUID id, @NonNull Skill skill) {
-        Skill skillDB = skillRepository.findById(id).get();
+        Skill skillDB = skillRepository.getById(id);
 
 //        validate fields
         if(Objects.nonNull(skill.getName()) && !"".equalsIgnoreCase(skill.getName())){
