@@ -1,21 +1,36 @@
 package com.murithipaul.portfolio.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.UUID;
 
 @Entity
 public class Project {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(
+            name = "project_sequence",
+            sequenceName = "project_sequence",
+            allocationSize = 50
+    )
+    @GeneratedValue(
+            generator = "project_sequence",
+            strategy = GenerationType.AUTO)
     private UUID id;
+
+    @Column(
+            unique = true,
+            nullable = false
+    )
     private String name;
 
-    public Project(UUID id, String name) {
-        this.id = id;
+    private String link;
+
+    public Project() {
+
+    }
+
+    public Project(String name, String link) {
         this.name = name;
+        this.link = link;
     }
 
     public UUID getId() {
@@ -32,6 +47,14 @@ public class Project {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
     }
 
     @Override

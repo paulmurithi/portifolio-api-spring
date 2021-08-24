@@ -3,6 +3,7 @@ package com.murithipaul.portfolio.service;
 import com.murithipaul.portfolio.entity.Skill;
 import com.murithipaul.portfolio.repository.SkillRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -36,7 +37,7 @@ public class SkillServiceImpl implements SkillService {
     }
 
     @Override
-    public Skill updateSkill(UUID id, Skill skill) {
+    public Skill updateSkill(UUID id, @NonNull Skill skill) {
         Skill skillDB = skillRepository.findById(id).get();
 
 //        validate fields

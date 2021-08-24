@@ -1,23 +1,25 @@
 package com.murithipaul.portfolio.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.UUID;
 
 @Entity
+@Table
 public class Skill {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(
+            name = "skill_sequence",
+            sequenceName = "skill_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "skill_sequence")
     private UUID id;
     private String name;
 
     public Skill() {
     }
 
-    public Skill(UUID id, String name) {
-        this.id = id;
+    public Skill(String name) {
         this.name = name;
     }
 

@@ -1,11 +1,9 @@
 package com.murithipaul.portfolio.repository;
 
-import com.murithipaul.portfolio.entity.Project;
+import com.murithipaul.portfolio.entity.Testimonial;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.UUID;
-
 @Repository
-public interface ProjectRepository extends JpaRepository<Project, UUID> {
+public interface TestimonialRepository extends JpaRepository<Testimonial, Long> {
 }
