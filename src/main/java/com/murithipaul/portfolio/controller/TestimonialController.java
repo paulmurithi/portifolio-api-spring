@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("api/v1/testimonials")
@@ -23,7 +24,7 @@ public class TestimonialController {
     }
 
     @GetMapping("/{id}")
-    public Testimonial getTestimonialById(@PathVariable("id") long id){
+    public Optional<Testimonial> getTestimonialById(@PathVariable("id") long id){
         return testimonialService.getTestimonialById(id);
     }
 

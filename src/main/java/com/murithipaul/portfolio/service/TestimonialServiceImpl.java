@@ -7,6 +7,7 @@ import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TestimonialServiceImpl implements TestimonialService{
@@ -24,8 +25,8 @@ public class TestimonialServiceImpl implements TestimonialService{
     }
 
     @Override
-    public Testimonial getTestimonialById(long id) {
-        return testimonialRepository.getById(id);
+    public Optional<Testimonial> getTestimonialById(long id) {
+        return testimonialRepository.findById(id);
     }
 
     @Override
