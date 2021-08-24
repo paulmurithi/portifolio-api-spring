@@ -12,7 +12,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("api/v1/projects")
 public class ProjectController {
-    private ProjectService projectService;
+    private final ProjectService projectService;
 
     @Autowired
     public ProjectController(ProjectService projectService) {

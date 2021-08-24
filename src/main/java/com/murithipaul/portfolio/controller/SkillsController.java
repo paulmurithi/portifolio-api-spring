@@ -12,7 +12,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("api/v1/skills")
 public class SkillsController {
-    private SkillService skillService;
+    private final SkillService skillService;
 
     @Autowired
     public SkillsController(SkillService skillService) {
