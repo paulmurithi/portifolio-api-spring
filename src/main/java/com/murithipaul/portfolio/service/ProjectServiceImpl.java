@@ -12,7 +12,7 @@ import java.util.UUID;
 
 @Service
 public class ProjectServiceImpl implements ProjectService{
-    private ProjectRepository projectRepository;
+    private final ProjectRepository projectRepository;
 
     @Autowired
     public ProjectServiceImpl(ProjectRepository projectRepository) {

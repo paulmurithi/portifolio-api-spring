@@ -13,7 +13,7 @@ import java.util.UUID;
 
 @Service
 public class SkillServiceImpl implements SkillService {
-    private SkillRepository skillRepository;
+    private final SkillRepository skillRepository;
 
     @Autowired
     public SkillServiceImpl(SkillRepository skillRepository) {

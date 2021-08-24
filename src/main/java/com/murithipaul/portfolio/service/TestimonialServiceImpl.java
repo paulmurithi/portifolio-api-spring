@@ -12,7 +12,7 @@ import java.util.Optional;
 @Service
 public class TestimonialServiceImpl implements TestimonialService{
 
-    private TestimonialRepository testimonialRepository;
+    private final TestimonialRepository testimonialRepository;
 
     @Autowired
     public TestimonialServiceImpl(TestimonialRepository testimonialRepository) {
