@@ -12,10 +12,14 @@ import java.util.UUID;
 @RestController
 @RequestMapping("api/v1/skills")
 public class SkillsController {
-    @Autowired
     private SkillService skillService;
 
-//    get all skills
+    @Autowired
+    public SkillsController(SkillService skillService) {
+        this.skillService = skillService;
+    }
+
+    //    get all skills
     @GetMapping
     public List<Skill> getSkills(){
         return skillService.getSkills();

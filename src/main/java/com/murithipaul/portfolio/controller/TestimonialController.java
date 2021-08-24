@@ -10,8 +10,12 @@ import java.util.List;
 @RestController
 @RequestMapping("api/v1/testimonials")
 public class TestimonialController {
-    @Autowired
     private TestimonialService testimonialService;
+
+    @Autowired
+    public TestimonialController(TestimonialService testimonialService) {
+        this.testimonialService = testimonialService;
+    }
 
     @GetMapping
     public List<Testimonial> getTestimonials(){

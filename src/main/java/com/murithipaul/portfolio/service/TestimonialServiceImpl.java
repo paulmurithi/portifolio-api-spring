@@ -11,8 +11,12 @@ import java.util.List;
 @Service
 public class TestimonialServiceImpl implements TestimonialService{
 
-    @Autowired
     private TestimonialRepository testimonialRepository;
+
+    @Autowired
+    public TestimonialServiceImpl(TestimonialRepository testimonialRepository) {
+        this.testimonialRepository = testimonialRepository;
+    }
 
     @Override
     public List<Testimonial> getTestimonials() {

@@ -12,8 +12,12 @@ import java.util.UUID;
 
 @Service
 public class ProjectServiceImpl implements ProjectService{
-    @Autowired
     private ProjectRepository projectRepository;
+
+    @Autowired
+    public ProjectServiceImpl(ProjectRepository projectRepository) {
+        this.projectRepository = projectRepository;
+    }
 
     @Override
     public List<Project> getProjects() {
